@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/jpg" href="/favicon.png">
+
+    <title>Overglade</title>
+    <meta name="description" content="The game jam within a game · Singapore">
+
+    <meta property="og:url" content="https://overglade.hackclub.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Overglade">
+    <meta property="og:description" content="The game jam within a game · Singapore">
+    <meta property="og:image" content="/assets/ogimg.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="overglade.hackclub.com">
+    <meta property="twitter:url" content="https://overglade.hackclub.com">
+    <meta name="twitter:title" content="Overglade">
+    <meta name="twitter:description" contents="The game jam within a game · Singapore">
+    <meta name="twitter:image" content="/assets/ogimg.png">
+
+    <meta name="theme-color" content="#5B7932">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://overglade.hackclub.com">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <main>
+      <img src="background.png" class="background-img" aria-hidden="true"></img>
+
+      <div class="timer" id="timer">
+        05:00:00:00
+      </div>
+
+      <div class="text" id="text">
+        <p>One for sorrow, two for mirth</p>
+        <p>Three for a wedding, four for a birth</p>
+        <p>Five for silver, six for gold</p>
+        <p>Seven for a secret never to be told</p>
+        <p>Eight for a kiss, nine for a wish</p>
+        <p>Ten for a bird you must not miss.</p>
+      </div>
+    </main>
+
+    <script>
+      // Set countdown to October 15, 2025 at 5pm Pacific Time
+      const endTime = new Date('2025-10-15T17:00:00-07:00').getTime();
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const distance = endTime - now;
+
+        if (distance < 0) {
+          document.getElementById('timer').innerHTML = "00:00:00:00";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Format with leading zeros
+        const formatNumber = (num) => num.toString().padStart(2, '0');
+
+        document.getElementById('timer').innerHTML =
+          `${formatNumber(days)}:${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}`;
+      }
+
+      // Update timer immediately and then every second
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    </script>
+
+  </body>
+</html>

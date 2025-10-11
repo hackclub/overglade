@@ -1,0 +1,44 @@
+html, body, main {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  min-height: 100vh;
+
+}
+
+html {
+  background-color: #5B7932;
+  font-family: 'Averia Serif Libre', serif;
+
+}
+
+
+.background-img {
+  width: 100%;
+  display: block;
+}
+
+
+.timer {
+  position: absolute;
+  top: 49.5vw;
+  left: 48vw;
+  transform: rotate(-5deg);
+  text-align: center;
+  font-size: 5vw;
+  font-weight: bold;
+
+  color: #9B86DB;
+}
+
+.text {
+  position: absolute;
+  top: 192vh;
+  text-align: center;
+  width: 100%;
+  font-size: 3vw;
+}
+
+.text p {
+  margin: 4px 0;
+}
