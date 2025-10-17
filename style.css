@@ -9,9 +9,14 @@ html, body, main {
 html {
   background-color: #D9D9D9;
   font-family: 'Averia Serif Libre', serif;
+  font-size: 2vw;
 
 }
 
+
+a {
+  color: #7A8037;
+}
 
 .background-img {
   width: 100%;
@@ -87,7 +92,6 @@ html {
   width: 60%;
   margin: 0 auto;
   padding-top: 32px;
-  font-size: 1.2em;
 }
 
 
